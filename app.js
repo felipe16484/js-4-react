@@ -1,9 +1,8 @@
-// Manejo de Funciones
+// ! Manejo de Funciones
 
     /* 
 
-    // Manejo de funciones dentro de otras funciones
-
+        //* Manejo de funciones dentro de otras funciones
 
         function hello (){
             return function (){
@@ -20,9 +19,7 @@
 
     /* 
 
-
-        // Asignación de valores por defecto a parámetros en una función
-
+        //* Asignación de valores por defecto a parámetros en una función
 
         function add(x = 23.3, y = 0 ){
             return x + y;
@@ -33,10 +30,10 @@
     */
 
 
-// Manejo de Objetos
+// ! Manejo de Objetos
             
     /* 
-        // Ingreso a los datos del objeto
+        //* Ingreso a los datos del objeto
 
         const user = {
             name: 'Felipe',
@@ -62,11 +59,11 @@
         */
 
             
-// Shorthand Property Names
+// ! Shorthand Property Names
 
     /* 
         
-        // Asignación de datos ya previamente definidos a propiedades de un objeto 
+        //* Asignación de datos ya previamente definidos a propiedades de un objeto 
 
         const name = 'laptop'
         const price = 3000
@@ -80,9 +77,11 @@
 
     */
 
-// Manipulación del DOM
+// ! Manipulación del DOM
 
-        // Sería bueno profundizar en el tema de eventos y manejo
+    /* 
+
+        //* En la carpeta Listeners - DOM se encuentra un extra de este topic
 
         console.log(document.title)
         
@@ -99,3 +98,5 @@
 
         document.body.append(title)
         document.body.append(button)
+
+        */
