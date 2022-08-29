@@ -5,11 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listeners</title>
-    <link rel="stylesheet" href="../assets/css.css">
+    <link rel="stylesheet" href="../assets/css.css">    
 </head>
-<body>
+<body class="bg-gray-500 flex items-center justify-center">
 
-    <h1 class="font-bold">qweqweqwe</h1>
+    <section class="border-2 w-[700px] p-3 flex flex-col gap-3">
+        <div class="flex items-center justify-center border-2 p-2">
+
+            <!-- ! Primera forma de implementar los Listeners -->
+
+            <h1 class="text-white cursor-pointer" id="main_title"
+                onclick="
+                                
+                    console.log('The user has clicked the title!');                
+                
+                ">
+                WEB PARA MODIFICAR EL DOM
+            </h1>
+
+        </div>
+        <div class="flex items-center justify-center border-2 p-3 text-white gap-5">
+            <a href="" class="hover:border-b-[1px] hover:scale-110 transition-all">Link 1</a>
+            <a href="" class="hover:border-b-[1px] hover:scale-110 transition-all">Link 2</a>
+            <a href="" class="hover:border-b-[1px] hover:scale-110 transition-all">Link 3</a>
+        </div>
+        <form action="" method="" id="form" class="flex flex-col items-center justify-center border-2 p-2 text-white gap-2">
+            <h2 class="cursor-pointer" id="form_title">Formulario de Registro</h2>
+            <div class="flex flex-row gap-2 text-gray-500">
+                <input type="text" name="name" placeholder="Nombre" class="text-[12px] rounded-[2px] p-1">
+                <input type="email" name="email" placeholder="Email" class="text-[12px] rounded-[2px] p-1">
+                <input type="password" name="password" placeholder="Contraseña" class="text-[12px] rounded-[2px] p-1">
+            </div>
+            <button type="submit" class="text-gray-500 bg-white text-[13px] p-1 rounded hover:scale-110 transition-all duration-100">Registrar</button>
+        </form>
+        <section class="flex flex-col items-center justify-center border-2 p-2 text-white gap-2">
+            <h1 class="border-b-2 w-[100px] text-center my-4 cursor-pointer" id="blog_title">Blog</h1>
+            <div class="flex flex-col items-center justify-center border-2 p-2">
+                <h3 class="border-b-2 my-2">Artículo</h3>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, ea? Est rem magnam fugit corrupti sunt, voluptas nam, accusantium reiciendis repellat illum, fuga eos alias laudantium unde! Exercitationem numquam hic deserunt magni veniam ipsam, officiis nostrum ex deleniti voluptatibus aut, dolorum accusantium, quam modi. Rem eveniet expedita esse blanditiis fugiat iusto quae. Provident illum enim autem aliquam suscipit tempora eveniet. Quas dolorum sunt at deserunt harum consequuntur nobis ratione, voluptates amet nemo quam laudantium rerum minima quis aspernatur! Provident placeat magni, ullam eligendi facere modi soluta explicabo repudiandae vitae itaque, est qui dignissimos ex possimus suscipit maxime voluptates ratione odio.</span>
+            </div>
+            <div class="flex flex-col items-center justify-center border-2 p-2">
+                <h3 class="border-b-2 my-2">Artículo</h3>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, ea? Est rem magnam fugit corrupti sunt, voluptas nam, accusantium reiciendis repellat illum, fuga eos alias laudantium unde! Exercitationem numquam hic deserunt magni veniam ipsam, officiis nostrum ex deleniti voluptatibus aut, dolorum accusantium, quam modi. Rem eveniet expedita esse blanditiis fugiat iusto quae. Provident illum enim autem aliquam suscipit tempora eveniet. Quas dolorum sunt at deserunt harum consequuntur nobis ratione, voluptates amet nemo quam laudantium rerum minima quis aspernatur! Provident placeat magni, ullam eligendi facere modi soluta explicabo repudiandae vitae itaque, est qui dignissimos ex possimus suscipit maxime voluptates ratione odio.</span>
+            </div>
+            <div class="flex flex-col items-center justify-center border-2 p-2">
+                <h3 class="border-b-2 my-2">Artículo</h3>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, ea? Est rem magnam fugit corrupti sunt, voluptas nam, accusantium reiciendis repellat illum, fuga eos alias laudantium unde! Exercitationem numquam hic deserunt magni veniam ipsam, officiis nostrum ex deleniti voluptatibus aut, dolorum accusantium, quam modi. Rem eveniet expedita esse blanditiis fugiat iusto quae. Provident illum enim autem aliquam suscipit tempora eveniet. Quas dolorum sunt at deserunt harum consequuntur nobis ratione, voluptates amet nemo quam laudantium rerum minima quis aspernatur! Provident placeat magni, ullam eligendi facere modi soluta explicabo repudiandae vitae itaque, est qui dignissimos ex possimus suscipit maxime voluptates ratione odio.</span>
+            </div>
+        </section>
+    </section>
 
     <script src="app.js"></script>
     <script src="../assets/tailwind.js"></script>
