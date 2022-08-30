@@ -70,10 +70,11 @@ console.log('Ejemplo por Defecto: ','Nombre/'+nombreDefecto,'  Apellido/'+apelli
 //? Para realizar la desestructuración para objetos podemos utilizar una sintaxis muy similar a la que usamos anteiormente con los array, la única 
 //? diferencia es que al momento de definir las variables con las que vamos a separar las propiedades no utilizamos los [] como en los array, sino,
 //? {} para el manejo de objetos.
-
 //* Principalmente las variables en las que guardaremos las propiedades deben tener el mismo nombre que las propiedades, pero eso lo podemos solventar
 //* manejando la sintaxis { nombre_propiedad: nombre_variable }.
 
+//* Si se necesita capturar sólo una propiedad del objeto, no es necesario dejar el espacio con una --  , ---, simplemente se escogen las propiedades
+//* a desestructurar y se dejan entre las llaves sin más.
 const persona1 = {
     nombre: 'Felipe',
     apellido: 'Castañeda',
@@ -81,5 +82,35 @@ const persona1 = {
 };
 
 const {nombre: nombrePer1, apellido: apellidoPer1, edad: edadPer1} = persona1;
+console.log('Destructuring para Objetos: ','Nombre/'+nombrePer1,'  Apellido/'+apellidoPer1,'  Edad/'+edadPer1);
 
-console.log('Ejemplo por Defecto: ','Nombre/'+nombreDefecto,'  Apellido/'+apellidoDefecto,'  Edad/'+edadDefecto);
+//? Si queremos individualizar una cantidad de propiedades y agrupar el resto, el spread operator funciona de la misma manera:
+const persona2 = {
+    nombre: 'Felipe',
+    apellido: 'Castañeda',
+    edad: 24,
+};
+const {nombre:nombrePer2, ...restoPersona2} = persona2;
+console.log('Destructuring para Objetos: ','Nombre/',nombrePer2,'  Apellido-Edad/'+restoPersona2.apellido,restoPersona2.edad);
+
+//! Ejemplo si el objeto contase con un subobjeto:
+
+const persona3 = {
+    nombre: 'Felipe',
+    apellido: 'Castañeda',
+    edad: 24,
+    direccion: {
+        calle: 'Calle 01',
+        codigoPostal: 170001
+    }
+};
+
+const { nombre, direccion: { calle,codigoPostal } } = persona3;
+
+//? Si llega el caso que hayan varios niveles de objetos dentro de otros objetos, se puede manejar la siguiente sintaxis
+//? pero no es muy recomendable por lo que no genera buena legibilidad de lo que se está haciendo
+
+//* const { nombre, direccion: { objeto: { objeto: {''} } } } = persona3;
+ 
+
+console.log('Destructuring para Objetos con Subojetos: ','Nombre/'+nombre,'Dirección/Calle/',calle,'Dirección/Código Postal/',codigoPostal);
