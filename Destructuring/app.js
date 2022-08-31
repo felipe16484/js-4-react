@@ -108,9 +108,60 @@ const persona3 = {
 const { nombre, direccion: { calle,codigoPostal } } = persona3;
 
 //? Si llega el caso que hayan varios niveles de objetos dentro de otros objetos, se puede manejar la siguiente sintaxis
-//? pero no es muy recomendable por lo que no genera buena legibilidad de lo que se está haciendo
+//? pero no es muy recomendable por lo que no genera buena legibilidad de lo que se está haciendo.
+
+//? Las variables que queden, en este caso (coloreadas), son las que van a recibir los datos, es importante saber que no importa
+//? que las variables estén dentro de un subobjeto, para poderlas llamar después simplemente se llama al nombre que se le dio a la variable y ya
 
 //* const { nombre, direccion: { objeto: { objeto: {''} } } } = persona3;
  
 
 console.log('Destructuring para Objetos con Subojetos: ','Nombre/'+nombre,'Dirección/Calle/',calle,'Dirección/Código Postal/',codigoPostal);
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+//! Trucos y Usos Habituales del Destructuring
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+
+//? Cuando tenemos unas variables a las cuales necesitemos cambiar el valor de cada una entre sí:
+let nombreT = 'Felipe';
+let apellidoT = 'Castañeda';
+
+console.log('Cambio de Valores Inicial: ',nombreT,apellidoT);
+
+[nombreT,apellidoT] = [apellidoT,nombreT];
+
+console.log('Cambio de Valores Entre Sí: ',nombreT,apellidoT);
+
+
+//? Destructuring en funciones
+const personaFunc = {
+    nombre:'Felipe',
+    apellido:'Castañeda',
+    edad:24,
+    direccion: {
+        calle:'Falsa 123',
+        ciudad:'Manizales',
+        pais:'Colombia'
+    },
+};
+
+//* Directamente en los parámetros de la función, colocamos las llaves indicando los nombres de las propiedades a rescatar del objeto
+//* posterior a ésto, podemos acceder dentro de la función a ellos
+function getFullName({nombre,apellido}){
+    return `${nombre} ${apellido}`;
+}
+
+console.log('Destructuring para Funciones: ',getFullName(personaFunc));
+
+
+//? Destructuring en el (return)
+function getSalary(){
+    return [970,1020,980,1112]; //? Acá podemos ver que la función en este caso devuelve un array de salarios
+}
+
+const [salario1, salario2, salario3, salario4] = getSalary(); //? Podemos desestructurar el array del return 
+
+console.log('Destructuring en el Return: ',salario1, salario2, salario3, salario4);

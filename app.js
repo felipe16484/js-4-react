@@ -30,7 +30,7 @@
     */
 
 
-// ! Manejo de Objetos
+//! Manejo de Objetos
             
     /* 
         //* Ingreso a los datos del objeto
@@ -79,7 +79,7 @@
 
 // ! Manipulación del DOM
 
-    /* 
+    
 
         //* En la carpeta Listeners - DOM se encuentra un extra de este topic
 
@@ -99,4 +99,4 @@
         document.body.append(title)
         document.body.append(button)
 
-        */
+       
