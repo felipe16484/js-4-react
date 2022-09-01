@@ -1,11 +1,9 @@
 Curso en pausa: 
-- JavaScript para Aprender React
-https://www.youtube.com/watch?v=lVqHiTCIRQg - Cap: Objetos como parámetros
 
 
 Video actual:
-
-
+- JavaScript para Aprender React
+https://www.youtube.com/watch?v=lVqHiTCIRQg - 53:32
 
 Videos opciononales:
 https://www.youtube.com/watch?v=_5V6siSlP2k - Spread operator JavaScript
