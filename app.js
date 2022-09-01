@@ -1,4 +1,4 @@
-// ! Manejo de Funciones
+//! Manejo de Funciones
 
     /* 
 
@@ -59,7 +59,7 @@
         */
 
             
-// ! Shorthand Property Names
+//! Shorthand Property Names
 
     /* 
         
@@ -77,26 +77,26 @@
 
     */
 
-// ! Manipulación del DOM
+//! Manipulación del DOM
 
-    
+    /* 
 
         //* En la carpeta Listeners - DOM se encuentra un extra de este topic
 
-        console.log(document.title)
+        console.log(document.title)  //* De esa manera podemos capturar y mostrar el nombre del documento HTML, el cual se encuentra dentro de la etiqueta <head> del mismo
         
-        const title = document.createElement('h1')        
-        title.innerText = 'Éste es un título'
+        const title = document.createElement('h1') //* .createElement nos permite generar una etiqueta en el documento HTML        
+        title.innerText = 'Éste es un título' //* .innerText nos permite cambiar o incluir el contenido (texto) que hay dentro de la etiqueta
 
         const button = document.createElement('button')
         button.innerText = 'Haz click'
 
-        button.addEventListener('click', function (){ // <---- Manejadores de eventos
+        button.addEventListener('click', function (){ //? <---- Manejadores de eventos
             title.innerText = 'Texto actualizado con js'
             alert('Se realizó un click')
         })
 
-        document.body.append(title)
-        document.body.append(button)
+        document.body.append(title) //? .append nos permite añadir elementos al final de algo, si es el doc HTML, lo hará después del último hijo del nodo
+        document.body.append(button)  //? si es un array, lo hará al después de la última posición del array       
 
-       
+     */
