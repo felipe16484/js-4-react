@@ -296,7 +296,7 @@
 
 //! Array Methods
 
-    
+        /* 
 
         const names = ['ryan','joe','maria']
 
@@ -305,9 +305,9 @@
         for (let i = 0; i < names.length; i++) {
             const element = names[i];
             console.log(element)
-        }
+        } */
 
-
+        /* 
         //* Método .forEach
 
         //? Este método espera como parámetro una función, la cual al momento de ejecutarse lo que va a retornar son justamente
@@ -320,7 +320,7 @@
         console.log('Salida del Array por Método .forEach:')
         names.forEach(function(name){
             console.log(name);
-        })
+        }) */
 
 
         //* Método .map (es el método más utilizado en React)
@@ -373,10 +373,70 @@
         })
 
         console.log(nameFound); */
-
-        //* Método .filter
-
-        const newNames = ['marcos','mario','jhon']
     
 
+        //* Método .concat
     
+    /* 
+        //? Nos sirve para concatenar dos arreglos sin alterar los que se encuentran envueltos en la función
+
+        const names = ['ryan','joe','maria'];
+        const newNames = ['marcos','mario','jhon'];
+    
+        console.log(names);
+        console.log(newNames);
+        console.log(names.concat(newNames));
+     */
+    
+
+//! Spread Operator
+
+    /*     
+
+        //? Utilizando esta funcionalidad, podemos traer toda la información por ejemplo de un array o un objeto donde estemos invocando
+        //? el spread operator.
+
+        const user = {
+            name:'ryan',
+            lastname:'ray'
+        }
+
+        const address = {
+            street:'main street 123',
+            city:'cajanistán'
+        }
+
+        const userInfo = {
+            ...user,
+            ...address
+        }
+
+        console.log('Unión de Varios Objetos con Spread Operator: ',userInfo);
+
+     */
+
+
+//! Ecmascript modules
+
+    //! En este topic es necesario dirigirse al documento (add.js).
+    
+    //? Hay varias cosas a tener en cuenta cuando estamos trabajando con módulos:
+
+        //* Debemos tener instalado el node en nuestro directorio
+            //! npm init
+            //! npm install
+
+        //* En el documento package.json debemos incluir la línea: ("type":"module",) después de ("main": "xxxx.js",)
+
+        //* En la etiqueta script, la cual hace la instancia del documento (js) en el HTML, debe ir con una propiedad llamada (type="module")
+            //* la cual nos indica que estamos habilitando la funcionalidad que nos permite hacer importaciones de módulos.
+
+        //* La función o la variable que necesitemos exportar deberá tener (export) al inicio de la definición de la misma
+
+        //* Para poder invocar lo que necesitamos importar, se maneja la siguiente sintaxis (import { funcion_a_importar/variable_a_exportar } from "ruta_relativa";)
+
+        
+    import { add,multiply } from "./add.js";
+
+    console.log('Salida de Función add Importada: ',add(10,30))
+    console.log('Salida de Función multiply Importada: ',multiply(10,30))
