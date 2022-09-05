@@ -3,7 +3,7 @@ Curso en pausa:
 
 Video actual:
 - JavaScript para Aprender React
-https://www.youtube.com/watch?v=lVqHiTCIRQg - 53:32
+https://www.youtube.com/watch?v=lVqHiTCIRQg - 
 
 Videos opciononales:
 https://www.youtube.com/watch?v=_5V6siSlP2k - Spread operator JavaScript

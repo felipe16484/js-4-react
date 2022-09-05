@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/felipe16484/js-4-react/issues"
   },
-  "homepage": "https://github.com/felipe16484/js-4-react#readme"
+  "homepage": "https://github.com/felipe16484/js-4-react#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
 }

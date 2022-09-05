@@ -436,7 +436,120 @@
         //* Para poder invocar lo que necesitamos importar, se maneja la siguiente sintaxis (import { funcion_a_importar/variable_a_exportar } from "ruta_relativa";)
 
         
-    import { add,multiply } from "./add.js";
+        /* import { add,multiply,active,points,title } from "./add.js";
 
-    console.log('Salida de Función add Importada: ',add(10,30))
-    console.log('Salida de Función multiply Importada: ',multiply(10,30))
+        
+        console.log('Salida de Función add Importada: ',add(10,30));
+        console.log('Salida de Función multiply Importada: ',multiply(10,30));
+        console.log('Salida de Variables active, points, title Importadas: ',active,points,title); */
+
+    //? Con esto podemos aclarar que tenemos la posibilidad de exportar cualquier tipo de función, variable, etc...
+
+    //? Si queremos exportar algo por defecto
+
+        /* import addModule from "./add.js";
+        console.log('Salida de Variable/Función Importada por Defecto: ',addModule); */
+
+    
+//! Optional Chaining
+
+    //? Utilizamos estas propiedades al momento en el cual nosotros necesitemos validar, por ejemplo, una propiedad de un objeto
+
+        /* const persona = {
+            name: 'Ryan',
+            address: {
+                city: 'London'
+            }
+        }
+
+        console.log('Salida Optional Chaining: ',persona.location?.city); */
+
+    //? Podemos ver que la salida por consola al no existir la propiedad location, es undefined. Esta sintaxis nos resume el hecho de tener
+    //? que generar una condición para poder capturar el error que nos arroja el no tener una propiedad y estarla, por ejemplo en este caso,
+    //? llamándola por consola.
+
+
+//! Async Await
+
+    //* Primeramente es algo que se utiliza bastante en react, por lo general este tipo de funciones van de la mano con datos extraidos del
+    //* backend, los cuales vienen de la mano por una petición.
+
+    //* Hay algo importante a conocer antes de empezar a manejar el (Async/Await), esto es el (fetch()), es una librería que viene por defecto
+    //* en el navegador, nos permite colocar una dirección de internet y nos da la posibilidad de traer la información de esta página a una
+    //* constante en nuestro código.
+
+        //! Para poder manejar la librería (fetch), es necesario instalar la librería por medio del (npm) primero
+        //? npm install
+
+        //! Segundo se debe instanciar la misma arriba de la llamada a la API o a la página de donde se está extrayendo la información.
+
+        import fetch from 'node-fetch';
+
+        /*let data = fetch('https://jsonplaceholder.typicode.com/posts'); //! Esta url consume una API de datos random.
+
+        console.log('Salida de Fetch: ',data); */
+
+            //* Al ser ES6, este mismo cuenta con unas políticas de origen, por lo cual no dejará ejecutar este código por medio del navegador
+            //* pero SÍ en un servidor local
+
+        //? Igualmente, al ser ejecutado en un servidor local, lo que devuelve es una promesa, lo cual es muy típico en JavaScript, porque cuando
+        //? nosotros ejecutamos lógica del navegador no es que bloqueamos la ejecución del navegador, el navegador hace la lógica mientras el usuario puede 
+        //? estar haciendo otras cosas, a ésto se le conoce como (Asincronía) o (Código Asíncrono). Es decir, mientras se ejecuta una lógica, el navegador puede
+        //? ir haciendo otras tareas.
+
+        //? Tenemos diferentes tipos de sintaxis con los cuales podemos capturar la espera de la lógica que se ejecuta de forma asíncrona, por ejemplo:
+
+        /* fetch('https://jsonplaceholder.typicode.com/posts')
+
+            .then(function(response){   //!   <----------------------------------------- Ésta es una de las maneras que tenemos de capturar lo que esperamos cuando está listo.
+                console.log('Respuesta de la Petición: ',response);
+            })
+
+        console.log('Código continuación.') */
+
+        //? Podemos observar que lo que arroja la consola es la ejecución del console.log que dice ('Código continuación.') y después el código que estamos esperando
+        //? del (.then(...)), es decir, que se están ejecutando a medida de que van finalizando. Sería algo como (empieza a ejecutar el código de (fetch) y a medida
+        //? de que vas ejecutándolo, sigue con el resto del código. Por eso es que se muestra primero el segundo (.log), porque el primer bloque no ha terminado
+        //? de ejecutarse)
+
+            //* Es importante tener en cuenta estos conceptos al momento de codificar, porque si implementamos estas prácticas estamos aprovechando los procesos
+            //* de nuestro CPU, es decir, no estamos bloqueándolo cada vez por una tarea, sino que seguimos trabajando unas tareas mientras se acaban de ejecutar otras.
+
+        //? Recibiendo la respeuesta como parámetro, nos arroja información poco legible, por lo que podemos hacer lo siguiente para poder leer mejor la respuesta de la petición.
+
+        /* fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function(response){ 
+                return response.json(); //! Método que trae la API del navegador para hacer un parseo a JSON 
+                                        //! El método también es (Asíncrono), por lo que toca también hacer otro (.then) para este método
+            })
+            .then(function(data){
+                console.log('Respuesta de la Petición: ',data);
+            })
+            
+        console.log('Código continuación.'); */
+
+        //? Podemos ver que la salida de la petición es mucho más organizada y legible.
+
+        
+        //* Ejemplo reenviando la información a un HTML creado por medio de JS:
+
+
+        const ul = document.createElement('ul');
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function(response){ 
+                return response.json(); //! Método que trae la API del navegador para hacer un parseo a JSON 
+                                        //! El método también es (Asíncrono), por lo que toca también hacer otro (.then) para este método
+            })
+            .then(function(data){
+                console.log('Respuesta de la Petición: ',data);
+                data.forEach(function(post){
+                    const li = document.createElement('li');
+                    li.innerText = post.title;
+                    ul.append(li);
+                });
+                document.body.append(ul);
+            })
+            
+        console.log('Código continuación.');
+
