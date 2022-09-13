@@ -1,9 +1,10 @@
 Curso en pausa: 
-
+- JavaScript para Aprender React
+https://www.youtube.com/watch?v=lVqHiTCIRQg - 1:18:56
 
 Video actual:
-- JavaScript para Aprender React
-https://www.youtube.com/watch?v=lVqHiTCIRQg - 
+- Curso de Reactjs desde Cero para principiantes 2022
+https://www.youtube.com/watch?v=rLoWMU4L_qE - 
 
 Videos opciononales:
 https://www.youtube.com/watch?v=_5V6siSlP2k - Spread operator JavaScript
