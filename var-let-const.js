@@ -6,7 +6,7 @@
 
 
 //* Ámbito - Alcance - Scope:
-//? Cada una de estar formas de declarar variables tienen algo llamado (ámbito),(alcance) o (scope). Ésto nos indica dónde están disponibles
+//? Cada una de estas formas de declarar variables tienen algo llamado (ámbito),(alcance) o (scope). Ésto nos indica dónde están disponibles
 //? cada una de ellas para su manejo, ya que tienen un ámbito diferente.
 
     //* var:
